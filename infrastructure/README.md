@@ -24,16 +24,35 @@ select <env>`).
 Test
 ----
 
-To test any pending change, use _plan_:
+To test any pending change, use _plan_. In example:
 
-`terraform plan -var-file=azure.tfvars`
+```
+$ terraform plan -var-file=azure.tfvars
+......
++ azurerm_resource_group.web
+    location: "westeurope"
+    name:     "web"
+    tags.%:   "<computed>"
+
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+```
 
 Execute
 -------
 
-To apply changes to current environment, use _apply_:
+To apply changes to current environment, use _apply_. In example:
 
-`terraform apply -var-file=azure.tfvars`
+```
+$ terraform apply -var-file=azure.tfvars
+azurerm_resource_group.web: Creating...
+  location: "" => "westeurope"
+  name:     "" => "web"
+  tags.%:   "" => "<computed>"
+azurerm_resource_group.web: Creation complete (ID: /subscriptions/0a7c7d3a-dd97-4a38-abfd-f8946165893b/resourceGroups/web)
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+```
 
 Author
 ------

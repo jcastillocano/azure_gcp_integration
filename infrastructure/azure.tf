@@ -5,3 +5,9 @@ provider "azurerm" {
   client_secret   = "${var.az_client_secret}"
   tenant_id       = "${var.az_tenant_id}"
 }
+
+# create a resource group
+resource "azurerm_resource_group" "web" {
+    name = "web"
+    location = "West Europe"
+}
