@@ -17,11 +17,11 @@ Infrastructure
 
 We are using terraform to initialize infrastructure in Azure and Google.
 The idea behind terraform is we can test (plan), apply changes, revert,
-destroy and much more just running command from the console. Every
+destroy and much more just running commands from the console. Every
 change is tracked in github; state can be shared between developers if
 we save it on any remote state provider.
 
-Although I would've like to have 100% automated with terraform, there is one piece of
+Although I would've like to have everything 100% automated with terraform, there is one piece of
 Azure infrastructure not supported yet: [App
 Services][terraform_issues]. In order to achieve this 100% automation we
 will use [Azure CLI][azure_cli] to complete this step.
@@ -29,8 +29,8 @@ will use [Azure CLI][azure_cli] to complete this step.
 Jenkins
 -------
 
-Provsion a Jenkins instance with everything you need for testing Python
-applications (see [Python Template for Jenkins][python_jenkins_template]):
+To provision a Jenkins instance with everything you need for testing Python
+applications (see [Python Template for Jenkins][python_jenkins_template]) we will use Ansible:
 
  * Pylint
  * Code coverage
@@ -46,15 +46,15 @@ integration branch (develop):
  4. Merge to master
  5. Trigger deployment in Azure
 
-Beside the fact we've achieved a CI/CD pipeline, this is far from being
-a trully desirable pipeline. There are more step to fulfill, i.e.:
+Besides the fact we've achieved a CI/CD pipeline, this is far from being
+a truly desirable pipeline. There are more step to fulfill, i.e.:
 
  * Blue/Green deployments: don't deploy straight away, create a green
    deployment where we can run some validations (integration tests, QA).
  * Environments: right now there is just one environment. More
    environments (ci, dev, qa, staging) are required.
- * Rollbacks: although there is roll back capability (checkout previous
-   tag, push) it is not automated.
+ * Rollbacks: although roll back capability (checkout previous
+   tag, push) exists, it is not automated.
 
 Code
 ----
