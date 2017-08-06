@@ -3,5 +3,8 @@
 *.tfstate.backup
 *.tfvars
 
+# Google credentials
+account.json
+
 # Module directory
 .terraform/

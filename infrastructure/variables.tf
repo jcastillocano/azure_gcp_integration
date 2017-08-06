@@ -41,3 +41,21 @@ variable "private_ssh" {
   description = "SSH private key path"
   default     = "~/.ssh/id_rsa"
 }
+
+# Google variables
+
+variable "google_project" {
+  type        = "string"
+  description = "Google Cloud project name"
+}
+
+variable "google_region" {
+  type        = "string"
+  description = "Google Cloud region"
+  default     = "europe-west1-d"
+}
+
+variable "google_sql_password" {
+  type        = "string"
+  description = "MySQL server password"
+}

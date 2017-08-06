@@ -57,7 +57,20 @@ There is a wrapper to execute all these steps at once, check it at
 *run_tests.sh*. It will deploy in a local server this app and run all
 the tests.
 
+Deployments
+-----------
+
+Every push to develop branch to
+https://python-app-test.scm.azurewebsites.net/python-app-test.git will
+trigger http://51.141.30.23:8080/job/testapp/ pipeline job. At the end
+of the proccess, this version will deployed using Azure Web App
+deployments (see [Azure Web Python][azure_web_python]). You can check
+this new version here: http://python-app-test.azurewebsites.net/this new
+version here: http://python-app-test.azurewebsites.net.
+
 Author
 ------
 
 Juan Carlos Castillo Cano - <jccastillocano@gmail.com>
+
+[azure_web_python]:https://docs.microsoft.com/en-us/azure/app-service-web/app-service-web-get-started-python
