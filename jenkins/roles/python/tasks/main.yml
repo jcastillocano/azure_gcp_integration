@@ -1,0 +1,39 @@
+---
+# tasks file for python
+
+- name: Install testing packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ python_apt_packages }}"
+
+- name: Install testing libraries
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ python_pip_libraries }}"
+
+- name: Add github ssh key
+  copy:
+    content: "{{ jenkins_git_ssh }}"
+    dest: /home/jenkins/.ssh/id_rsa
+    owner: jenkins
+    group: jenkins
+    mode: 0400
+
+- name: Install Python Job Template for Jenkins
+  git:
+    repo: https://github.com/bobuss/python-jenkins-template.git
+    dest: /var/lib/jenkins/jobs/python-template
+
+- name: Grant permission on python-template to Jenkins
+  file:
+    path: /var/lib/jenkins/jobs/python-template
+    owner: jenkins
+    group: jenkins
+    recurse: yes
+
+- name: Reload Jenkins
+  service:
+    name: jenkins
+    state: restarted

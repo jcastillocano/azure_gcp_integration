@@ -1,0 +1,8 @@
+---
+jenkins_plugins:
+ - sloccount
+ - xunit
+ - violations
+ - warnings
+ - cobertura
+ - git

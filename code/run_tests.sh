@@ -3,7 +3,7 @@ set -e
 
 # Not sure why we cannot create a virtualenv from a directory named code
 # neither install dependencies, so we cd into tests directory
-if [[ -e '.virtualenv' ]]; then
+if [[ ! -e '.virtualenv' ]]; then
     virtualenv .virtualenv
 fi
 
@@ -17,7 +17,7 @@ echo "Running unit tests"
 nosetests --with-coverage --with-xunit --cover-xml --cover-html --cover-package=main tests/hello_tests.py
 
 echo "Running violations"
-pylint --rcfile=./tests/.pylint.cfg main.py tests/hello_tests.py -f html > pylint.html ||:
+pylint --rcfile=./tests/.pylint.cfg main.py tests/hello_tests.py > pylint.log ||:
 
 python main.py &
 MAIN_PID=$!

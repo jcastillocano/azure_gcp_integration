@@ -1,0 +1,15 @@
+---
+# defaults file for python
+
+python_apt_packages:
+  - sloccount
+  - python-pip
+  - python-virtualenv
+  - git
+
+python_pip_libraries:
+  - pylint
+  - clonedigger
+  - nose
+  - nosexcover
+  - pyflakes
