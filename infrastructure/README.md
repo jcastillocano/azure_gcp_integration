@@ -74,7 +74,7 @@ these Azure CLI commands:
 Author
 ------
 
-Juan Carlos Castillo Cano - jccastillocano@gmail.com
+Juan Carlos Castillo Cano - <jccastillocano@gmail.com>
 
 [azure_cli]:https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
 [azure_credentials]:https://www.terraform.io/docs/providers/azurerm/index.html#creating-credentials

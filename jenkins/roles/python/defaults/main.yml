@@ -13,3 +13,10 @@ python_pip_libraries:
   - nose
   - nosexcover
   - pyflakes
+  - lxml
+  - python-jenkins
+
+jenkins_remote_host: localhost
+jenkins_remote_port: 8080
+jenkins_admin_username: admin
+jenkins_admin_password: <<<<< >>>>>

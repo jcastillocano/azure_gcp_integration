@@ -54,9 +54,10 @@ Integration tests (you need your server up and running on URI:PORT)
  * Run behave `behave`
 
 There is a wrapper to execute all these steps at once, check it at
-*run_tests.sh*
+*run_tests.sh*. It will deploy in a local server this app and run all
+the tests.
 
 Author
 ------
 
-Juan Carlos Castillo Cano
+Juan Carlos Castillo Cano - <jccastillocano@gmail.com>

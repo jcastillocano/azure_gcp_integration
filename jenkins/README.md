@@ -35,7 +35,7 @@ TBD
 Author
 ------
 
-Juan Carlos Castillo Cano
+Juan Carlos Castillo Cano - <jccastillocano@gmail.com>
 
 [ansible]:https://www.ansible.com/
 [python_jenkins_template]:https://github.com/bobuss/python-jenkins-template

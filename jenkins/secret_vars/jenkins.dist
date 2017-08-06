@@ -1,3 +1,4 @@
 ---
 jenkins_admin_password: <<<<<<< >>>>>>>
+jenkins_remote_host: <<<<<<< >>>>>>>
 jenkins_git_ssh: <<<<<<< >>>>>>>
