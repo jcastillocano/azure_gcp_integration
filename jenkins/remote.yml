@@ -1,0 +1,13 @@
+---
+- hosts: jenkins
+  become: yes
+  gather_facts: yes
+
+  vars_files:
+    - host_vars/jenkins
+    - secret_vars/jenkins
+
+  roles:
+    - geerlingguy.java
+    - geerlingguy.jenkins
+    - python

@@ -1,0 +1,8 @@
+# Preinstalled roles
+roles/geerlingguy.java
+roles/geerlingguy.jenkins
+
+# Ansible files
+remote.retry
+secret_vars/jenkins
+inventory
