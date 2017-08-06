@@ -60,13 +60,12 @@ the tests.
 Deployments
 -----------
 
-Every push to develop branch to
-https://python-app-test.scm.azurewebsites.net/python-app-test.git will
-trigger http://51.141.30.23:8080/job/testapp/ pipeline job. At the end
-of the proccess, this version will deployed using Azure Web App
-deployments (see [Azure Web Python][azure_web_python]). You can check
-this new version here: http://python-app-test.azurewebsites.net/this new
-version here: http://python-app-test.azurewebsites.net.
+Every push to [python-app-test][python-app-test] repo (only develop branch)
+will trigger [Jenkins][jenkins_cicd_job] pipeline job. At the end
+of the proccess, a new release will be push to github and this new version will also be deployed using Azure Web App
+deployments (see [Azure Web Python][azure_web_python]).
+
+You can check current app version [here][web]
 
 Author
 ------
@@ -74,3 +73,6 @@ Author
 Juan Carlos Castillo Cano - <jccastillocano@gmail.com>
 
 [azure_web_python]:https://docs.microsoft.com/en-us/azure/app-service-web/app-service-web-get-started-python
+[python-app-test]:https://python-app-test.scm.azurewebsites.net/python-app-test.git
+[jenkins_cicd_job]:http://51.141.30.23:8080/job/testapp/
+[web]:http://python-app-test.azurewebsites.net/

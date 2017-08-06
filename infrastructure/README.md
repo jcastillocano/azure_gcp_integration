@@ -2,13 +2,13 @@ Terraform scripts to provision infrastructure
 =============================================
 
 This repo contains all the terraform templates to provison both Azure
-and Google clouds with some basic infrastructure + CI/CD pipeline in
-Jenkins.
+and Google clouds with some basic infrastructure in Azure, CI/CD pipeline with
+Jenkins, MySQL DB in Google and VPN server.
 
 Ideally all the deployment environment should be configure with
 terraform, but since there is not _appservice_ resource yet for Azure
 (see [Create azure App Service Plan resource][terraform_issues])
-everything (from provision to deployments) will be manage by Azure
+all the bits for App Service will be handled with Azure
 _cli_.
 
 Requirements
@@ -36,7 +36,7 @@ Test
 To test any pending change, use _plan_. In example:
 
 ```
-$ terraform plan -var-file=azure.tfvars
+$ terraform plan -var-file=azure.tfvars -var-file=google.tfvars
 ......
 + azurerm_resource_group.web
     location: "westeurope"
@@ -53,7 +53,7 @@ Execute
 To apply changes to current environment, use _apply_. In example:
 
 ```
-$ terraform apply -var-file=azure.tfvars
+$ terraform apply -var-file=azure.tfvars -var-file=google.tfvars
 azurerm_resource_group.web: Creating...
   location: "" => "westeurope"
   name:     "" => "web"
@@ -73,6 +73,17 @@ these Azure CLI commands:
  5. Configure local git deployment `az webapp deployment source
     config-local-git --name python-app-test --resource-group default
 --query url --output tsv`. Note github repo.`
+
+Destroy
+-------
+
+As soon as we finish our demo we can destroy all the infrastructure to
+save some bucks. To do this, however, we need first to delete all the
+App Service resources we created with Azure CLI. After that, we just need to run:
+
+`terraform destroy -vars-file=azure.tfvars -vars-file=google.tfvars`
+
+To destroy all the resources in Azure and Google Cloud Platform.
 
 Author
 ------
