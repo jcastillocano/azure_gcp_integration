@@ -1,0 +1,8 @@
+cover
+coverage.xml
+*pyc
+nosetests.xml
+pylint.html
+.virtualenv
+.coverage
+reports
