@@ -67,6 +67,20 @@ deployments (see [Azure Web Python][azure_web_python]).
 
 You can check current app version [here][web]
 
+Makefile
+--------
+
+This repo provides a _Makefile_ to run all code related tasks:
+
+ * Pull this repository from Github (using develop branch)
+ * Install all pip dependencies
+ * Run lint and unit tests
+ * Build artifact
+ * Bootstrap a local server on http://localhost:5000/
+ * Clean all artifacts and output files stopping any local server
+
+You can get more help for each task running `make help`.
+
 Author
 ------
 
