@@ -6,3 +6,4 @@ pylint.html
 .virtualenv
 .coverage
 reports
+.pid
